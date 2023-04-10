@@ -1,0 +1,47 @@
+.menu-item{
+    margin: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    cursor: pointer;
+    transition:  background-size  3s; 
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  
+  .menu-item:hover{
+    background-size: 110% 110%;
+    
+  }
+  
+  .menu-item:hover > .content { background-color: rgba(255, 255, 255, 0.75); }
+  
+  .content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
+    padding: 1em;
+    height: 20%;
+    font-size: 75%;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .item1{
+    grid-area:a;
+  }
+  .item2{
+    grid-area:b;
+  }
+  .item3{
+    grid-area:c;
+  }
+  .item4{
+    grid-area: d;
+  }
+  .item5{
+    grid-area: e;
+  }
+  

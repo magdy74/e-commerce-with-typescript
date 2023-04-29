@@ -10,27 +10,32 @@ class DirectoryMenu extends React.Component{
             {
                 id:1,
                 title:'HATS',
-                img:"https://i.ibb.co/cvpntL1/hats.png"
+                img:"https://i.ibb.co/cvpntL1/hats.png",
+                linkUrl:"/hats"
             },
             {
                 id:2,
                 title:'JACKETS',
-                img:'https://i.ibb.co/px2tCc3/jackets.png'
+                img:'https://i.ibb.co/px2tCc3/jackets.png',
+                linkUrl:"/jackets"
             },
             {
                 id:3,
                 title:'SHOES',
-                img:'https://i.ibb.co/0jqHpnp/sneakers.png'
+                img:'https://i.ibb.co/0jqHpnp/sneakers.png',
+                linkUrl:"/shoes"
             },
             {
                 id:4,
                 title:'WOMENS',
-                img:'https://i.ibb.co/GCCdy8t/womens.png'
+                img:'https://i.ibb.co/GCCdy8t/womens.png',
+                linkUrl:"/womens"
             },
             {
                 id:5,
                 title:'MENS',
-                img:'https://i.ibb.co/R70vBrQ/men.png'
+                img:'https://i.ibb.co/R70vBrQ/men.png',
+                linkUrl:"/mens"
             }
         ]}
     }
@@ -38,8 +43,8 @@ class DirectoryMenu extends React.Component{
    render(){
     return(
     <div className='directory-menu'>
-        {this.state.sections.map(({title, id, img}) => 
-        (<MenuItem title={title} id ={id} img={img}/>))}
+        {this.state.sections.map(({title, id, img, linkUrl}) => 
+        (<MenuItem title={title} key ={id} id={id} img={img} linkUrl={linkUrl}/>))}
     </div>
     
     )

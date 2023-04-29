@@ -1,0 +1,34 @@
+.header{
+    height: 7vh;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    text-transform: Uppercase;
+    font-size: medium;
+}
+.rightPart{
+    margin: 3em;
+    display: flex;
+    align-items:center;    
+}
+.leftPart{
+    display: flex;
+    width: 40vw;
+    justify-content: space-around;
+    align-items:center;    
+}
+.img1{
+    width: 3em;
+    height: auto;
+}
+
+.img2{
+    width: 2em;
+    height: auto;
+    cursor: pointer;
+}
+
+
+span{
+    cursor: pointer;
+}

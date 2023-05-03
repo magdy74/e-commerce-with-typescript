@@ -1,0 +1,27 @@
+/* .collection{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-content: center;
+    gap: 2em;
+    align-items: center;
+    margin: 2em;
+    width: 100wv;
+} */
+
+.collection{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1em;
+    margin: 1em;
+    width: 100wv;
+}
+
+.categoriebutton:hover{
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+

@@ -1,11 +1,30 @@
 .sign-in{
     display: flex;
     flex-direction: column;
-    height: 30vh;
+    height: 40vh;
+    width: 30vw;
+    padding: 2em;
 }
 
 .sign-in-form{
     display: flex;
     flex-direction: column;
+    padding: 2em 0em;
     
 }
+
+.button-group{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+
+
+
+
+
+

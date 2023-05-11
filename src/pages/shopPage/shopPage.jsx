@@ -8,7 +8,6 @@ const ShopPage = ({hats}) => {
         <div>
             <h1>Collections</h1>
             <ShopData/>
-            <h2>b</h2>
         </div>
     )
 }

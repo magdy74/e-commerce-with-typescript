@@ -1,10 +1,14 @@
 import React from "react";
 import './cart-component.css';
-const Cart = ({name, imageUrl, price}) =>{
+import { connect } from "react-redux";
+import { addItem } from "../../redux/cart/cart.actions";
+
+const Cart = ({item, addItem}) =>{
+    const {name, imageUrl, price} = item;
     return(
         <div className='cart'>
             <div className='imgAndAddToCart' style={{backgroundImage:`url(${imageUrl})`}}>
-                <div className="addToCart">
+                <div className="addToCart" onClick={()=> addItem(item)}>
                     <span className="buttonText">Add to cart</span>
                 </div>
             </div>
@@ -16,4 +20,9 @@ const Cart = ({name, imageUrl, price}) =>{
     )
 }
 
-export default Cart;
+
+const mapDispatchToProps = dispatch => ({
+    addItem: (item) => dispatch(addItem(item))
+})
+
+export default connect(null, mapDispatchToProps)(Cart);

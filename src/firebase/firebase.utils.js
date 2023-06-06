@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getFirestore,  doc, getDoc, setDoc} from "firebase/firestore";
 
 // config the fireStore and intialize app
@@ -22,36 +22,6 @@ export const auth = getAuth();
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({prompt:'select_account'});
 export const signInWithGoogle =() => signInWithPopup(auth, provider);
-
-// Autentication email and password
-
-// Sign up new users
-export const SignUpWithEmailAndPassword = (email,password, displayName) => {
-  createUserWithEmailAndPassword(auth, email, password, displayName)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    user.displayName= displayName
-    console.log(userCredential)
-    console.log(user)
-    // ...
-  })
-  .catch((error) => {
-    console.log("error user sign up")
-    // ..
-  });
-}
-// Sign in existing users
-export const SignInWithEmailAndPassword = (email,password) => {
-  signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    console.log("error user sign in")
-  });}
 
 
 // Store data in fireStore database

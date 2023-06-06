@@ -19,6 +19,12 @@
     width: 100wv;
 }
 
+.categoriebutton{
+    display:inline-block;
+    margin: 1em 0em 0.5em 1em;
+    text-transform: capitalize;
+}
+
 .categoriebutton:hover{
     cursor: pointer;
     color: rgba(0, 0, 0, 0.75);

@@ -6,7 +6,6 @@ const ShopPage = ({hats}) => {
 
     return(
         <div>
-            <h1>Collections</h1>
             <ShopData/>
         </div>
     )

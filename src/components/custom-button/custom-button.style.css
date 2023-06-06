@@ -25,3 +25,20 @@
     color: white;
     border-style: none;
 }
+
+.checkOutButton{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 2px solid;
+    font-size: 14px;
+    margin: 0.5em 0em 1em 0em;
+    width: 15em;
+    font-weight: 600;
+
+}
+
+.checkOutButton:hover{
+    background-color: #000000;
+    color: white;
+    border-style: none;
+}

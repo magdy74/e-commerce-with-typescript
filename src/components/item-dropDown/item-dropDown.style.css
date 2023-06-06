@@ -1,0 +1,19 @@
+.dropDownItem{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;   
+    font-size: medium;
+   }
+   
+   .dropDownNamePrice{
+       display: flex;
+       flex-direction: column;
+       gap: 0.25em;
+   }
+   
+   .dropDownImg{
+       width: 25%;
+       height: auto;
+       margin: 0.5em;
+   }
+   

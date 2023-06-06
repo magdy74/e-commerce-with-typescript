@@ -1,0 +1,36 @@
+.shopping-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    position: relative;
+    margin: 0em 1em;
+}
+
+.imgCart{
+    position: absolute;
+    width: 2em;
+    height: auto;
+    cursor: pointer;
+    margin-right: 1em;
+    
+}
+
+.imgCart:hover{
+    opacity: 0.75;
+}
+
+.ItemsNumberInCart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:-0.5em;
+    border-radius: 50%;
+    background-color: rgb(255, 217, 0);
+    min-width: 1em;
+    width: auto;
+    height: 1em;
+    font-size: small;
+    padding: 0.2em;
+}

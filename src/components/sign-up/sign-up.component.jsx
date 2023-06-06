@@ -2,7 +2,8 @@ import React from "react";
 import './sign-up.style.css'
 import InputForm from "../input-form/input-form.component";
 import CustomButton from "../custom-button/custom-button.component";
-import { SignUpWithEmailAndPassword } from "../../firebase/firebase.utils";
+import {createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserProfileDocument, auth } from "../../firebase/firebase.utils";
 class SignUp extends React.Component {
     constructor(){
         super()
@@ -14,18 +15,14 @@ class SignUp extends React.Component {
         }
     }
 
-    handleSubmit = (event) =>{
-        event.preventDefault()
-        // this.setState({displayName:'', email:'', password:'', confirmPassword:''})
-    } 
-
     handleChange = (event) => {
         const {name, value} = event.target;
         this.setState({[name]: value});
 
     }
 
-    handleSubmitButton = () =>{
+    handleSubmitButton = async (event) =>{
+        event.preventDefault()
         const {password, confirmPassword, email, displayName} = this.state;
         if(password !== confirmPassword){
             alert('Password is not equal')
@@ -35,7 +32,22 @@ class SignUp extends React.Component {
             alert('Please enter equal or more than 8 charachtars');
             return;
         }
-        SignUpWithEmailAndPassword(email,password, displayName);
+
+        try{
+            const {user} = await createUserWithEmailAndPassword(auth, email, password)
+            console.log(user);
+            await createUserProfileDocument(user, {displayName});
+            this.setState({
+                displayName:'',
+                email:'',
+                password:'',
+                confirmPassword:''
+            })
+            
+        }
+        catch(error){
+            console.log('error sign up')
+        }
         
     }
 

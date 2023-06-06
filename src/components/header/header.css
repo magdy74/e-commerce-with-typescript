@@ -1,22 +1,22 @@
 .header{
-    height: 7vh;
+    height: 55px;
     display: flex;
     align-items:center;
-    justify-content: space-between;
     text-transform: Uppercase;
     font-size: large;
     width: 100%;
 }
-.rightPart{
+.leftPart{
     padding: 3em;
     display: flex;
     align-items:center;    
 }
-.leftPart{
+.rightPart{
     display: flex;
     min-width: 45vw;
     justify-content: space-around;
-    align-items:center;    
+    align-items:center; 
+    margin-left: auto; 
 }
 .imgCrown{
     width: 3em;
@@ -24,16 +24,6 @@
     cursor: pointer;
 }
 
-
-.imgCart{
-    width: 2em;
-    height: auto;
-    cursor: pointer;
-}
-
-.imgCart:hover{
-    opacity: 0.75;
-}
 
 
 .spanHeader{

@@ -8,8 +8,8 @@ const PreviewCollection = ({title, items}) => {
         <div>
             <h2 className="categoriebutton" onClick={()=>navigate(`/${title}`)}>{title}</h2>
             <div className='collection' >
-            {items.filter((item, index) => index < 4).map(({name,id, imageUrl, price})=> (
-                <Cart key={id} name={name} imageUrl={imageUrl} price={price}/>
+            {items.filter((item, index) => index < 4).map((item)=> (
+                <Cart key={item.id} item={item}/>
             ))
                 }
             </div>

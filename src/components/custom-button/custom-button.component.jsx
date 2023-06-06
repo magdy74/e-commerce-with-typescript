@@ -1,9 +1,9 @@
 import React from "react";
 import "./custom-button.style.css"
 
-const CustomButton = ({children, isGoogleAuth, ...otherProps}) =>(
+const CustomButton = ({children, isGoogleAuth, isCheckOut, ...otherProps}) =>(
     <div>
-        <button className={`${isGoogleAuth ? "google-button" : ''} submit-button`} {...otherProps}>
+        <button className={`${isCheckOut ? 'checkOutButton' : ''} ${isGoogleAuth ? "google-button" : ''} submit-button`} {...otherProps}>
             {children}
         </button>
     </div>

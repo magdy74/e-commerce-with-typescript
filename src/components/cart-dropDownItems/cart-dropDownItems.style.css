@@ -34,3 +34,13 @@
     margin-top: auto; 
     
 }
+
+.empty-message{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    text-transform:none;
+    font-size: medium;
+}

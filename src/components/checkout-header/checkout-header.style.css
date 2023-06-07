@@ -1,0 +1,21 @@
+.checkout-header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid ;
+}
+
+.checkout-header-title{
+    width:  23%;
+    margin: 15px 15px;
+    display: flex;
+    justify-content: flex-start;
+    
+    
+}
+
+.checkout-header-title:last-child {
+    width:  8%;
+  }
+
+  

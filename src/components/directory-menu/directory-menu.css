@@ -6,6 +6,5 @@
       "a a b b c c"
       "d d d e e e";
     height: 75vh;
-    margin-right: 1em;
-    margin-left: 1em;
+    margin: 1em 1em;
   }

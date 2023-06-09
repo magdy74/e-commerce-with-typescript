@@ -8,9 +8,9 @@ import { removeItem, addItem, reduceQuantity } from "../../redux/cart/cart.actio
 const CheckOutContanier = ({cartItems,removeItem, addItem, reduceQuantity}) => {
     return(
         cartItems.map((item)=>{
-            const {imageUrl, name, quantity, price} = item;
+            const {imageUrl, name, quantity, price, id} = item;
             return(
-            <div className="checkout-item">
+            <div key={id} className="checkout-item">
                 <div  className="checkout-item-detail">
                     <img alt='img' src={`${imageUrl}`}  className='checkout-item-image'/>
                 </div>

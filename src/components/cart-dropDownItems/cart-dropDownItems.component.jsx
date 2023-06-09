@@ -14,8 +14,8 @@ const DropDownCart = ({cartItems, toggleCartHidden}) =>{
     <div className="drop-down-cart">
         <div className="drop-down-cart-list">
             { cartItems.length ? 
-            cartItems.map(({imageUrl,name, price, quantity}) => (
-             <ItemDropDown imageUrl={imageUrl} name={name} price={price} quantity={quantity}/>
+            cartItems.map(({imageUrl,name, price, quantity, id}) => (
+             <ItemDropDown key={id} imageUrl={imageUrl} name={name} price={price} quantity={quantity}/>
             ) )
             : <span className="empty-message">Your cart is empty</span>
             }

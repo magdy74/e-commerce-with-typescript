@@ -46,12 +46,7 @@ class App extends React.Component {
       <Header/>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
-        {/* <Route path="/hats" element={<HatsPage/>}/>
-        <Route path="/jackets" element={<JacketsPage/>}/>
-        <Route path="/shoes" element={<ShoesPage/>}/>
-        <Route path="/womens" element={<WomensPage/>}/>
-        <Route path="/mens" element={<MensPage/>}/> */}
-        <Route path="/shop" element={<ShopPage/>}/>
+        <Route path="/shop/*" element={<ShopPage/>}/>
         <Route path="/signin" element={ this.props.currentUser ? <Navigate to="/" replace/> :  <SignInAndSingUpPage/>}/>
         <Route path='/checkout' element={<CheckOutPage/>} />
       </Routes>

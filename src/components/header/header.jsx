@@ -20,7 +20,6 @@ const Header = ({currentUser, hiddenDropDownCart}) => {
         </div>
         <div className="rightPart">
             <span className= "spanHeader" onClick={()=> navigate('/shop')}>shop</span>
-            <span className= "spanHeader" onClick={()=> navigate('/contacts')}>contact</span>
             {currentUser ? 
             <span className= "spanHeader" onClick={()=> signOut(auth)}>sign Out</span>
             :

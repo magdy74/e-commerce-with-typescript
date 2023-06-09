@@ -1,0 +1,13 @@
+.Collection-Title{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.Collection-Style{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(25em, 1fr) );
+    gap: 2em;
+    margin: 2em;
+    width: 100wv;
+    justify-items: center;
+}

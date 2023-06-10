@@ -55,3 +55,10 @@
 .imgAndAddToCart:hover > .addToCart:hover > .buttonText { 
     color: rgba(255, 255, 255); 
 }
+
+
+@media only screen and (max-width: 500px) {
+    .cart {
+        width: 20em;
+    }
+  }

@@ -14,6 +14,7 @@
     justify-content: flex-end;
     margin-top: 30px;
     font-size: 36px;
+    margin-right: 0.5em;
     
 }
 
@@ -26,5 +27,14 @@
 
 .button{
     margin-left: auto;
+    margin-right: 1em;
     margin-top: 40px;
 }
+
+
+@media only screen and (max-width: 500px) {
+    .checkout-page {
+        min-width: 100%;
+        font-size: 10px;
+    }
+  }

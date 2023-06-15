@@ -39,6 +39,6 @@
 
 @media only screen and (max-width: 550px) {
     .header{
-        font-size: small;
+        font-size: 8px;
     }
   }

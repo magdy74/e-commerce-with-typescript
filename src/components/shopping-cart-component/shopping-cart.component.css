@@ -34,3 +34,9 @@
     font-size: small;
     padding: 0.2em;
 }
+
+@media only screen and (max-width: 600px) {
+    .ItemsNumberInCart{
+        font-size: 10px;
+    }
+  }

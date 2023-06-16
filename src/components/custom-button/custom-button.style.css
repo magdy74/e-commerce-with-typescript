@@ -44,9 +44,13 @@
 }
 
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
     .submit-button {
         font-size: 11px;
         height:  50px;
+    }
+    .checkOutButton{
+        font-size: 10px;
+        height: 3em;
     }
   }

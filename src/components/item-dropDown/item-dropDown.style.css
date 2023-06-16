@@ -5,15 +5,20 @@
     font-size: medium;
    }
    
-   .dropDownNamePrice{
+.dropDownNamePrice{
        display: flex;
        flex-direction: column;
        gap: 0.25em;
    }
    
-   .dropDownImg{
+.dropDownImg{
        width: 25%;
        height: auto;
        margin: 0.5em;
    }
-   
+
+@media only screen and (max-width: 600px) {
+    .dropDownItem{
+      font-size: 12px;
+    }
+  }

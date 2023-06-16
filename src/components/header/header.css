@@ -37,8 +37,8 @@
 }
 
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
     .header{
-        font-size: 8px;
+        font-size: 14px;
     }
   }

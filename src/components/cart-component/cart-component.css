@@ -23,7 +23,7 @@
 }
 
 .buttonText{
-    color: rgba(255, 255, 255, 0);
+    visibility: hidden;
 }
 
 .imgAndAddToCart:hover > .addToCart{
@@ -49,6 +49,7 @@
 }
 
 .imgAndAddToCart:hover > .addToCart > .buttonText{
+    visibility:visible;
     color: rgb(0, 0, 0);
 }
 

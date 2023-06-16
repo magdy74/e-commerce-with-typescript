@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import { selectShopCollections } from "../../redux/shop/shop-selectors";
 import { createStructuredSelector } from "reselect";
 
-
-
 const CollectionOverview = ({collections}) => {
     return(
         <div>

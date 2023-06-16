@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { getFirestore,  doc, getDoc, setDoc} from "firebase/firestore";
+import { getFirestore,  doc, getDoc, setDoc, collection, writeBatch} from "firebase/firestore";
 
 // config the fireStore and intialize app
 const config = {
@@ -49,3 +49,18 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   }
   return docRef;
 }
+
+// addCollectionstoDB
+
+export const addCollectionToDb = async (collectionName, objectToAdd) =>{
+  const collectionRef = collection(db, collectionName);
+  const batch = writeBatch(db)
+  objectToAdd.forEach((obj) => {
+    const objRef = doc(collectionRef, obj.title.toLowerCase())
+    console.log(obj)
+    batch.set(objRef, obj)
+  })
+    await batch.commit()
+    console.log("done")
+  }
+  

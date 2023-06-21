@@ -8,6 +8,10 @@ export const selectShopCollections = createSelector(
     (shop) => shop.collections
 )
 
+export const selectShopIsLoading = createSelector(
+    selectShop,
+    (shop) => shop.isLoading
+)
 
 
 export const selectCollection = locationParam => createSelector(

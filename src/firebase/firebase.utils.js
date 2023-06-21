@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { getFirestore,  doc, getDoc, setDoc, collection, writeBatch} from "firebase/firestore";
+import { getFirestore,  doc, getDoc, setDoc, collection, writeBatch, query, getDocs} from "firebase/firestore";
 
 // config the fireStore and intialize app
 const config = {
@@ -64,3 +64,18 @@ export const addCollectionToDb = async (collectionName, objectToAdd) =>{
     console.log("done")
   }
   
+
+  // getCategoriesDB
+
+export const getCategoriesDB = async () =>{
+  const collectionRef = collection(db, 'categories')
+  const q = query(collectionRef);
+  const querySnapshot = await getDocs(q);
+  const dataArray = [];
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    dataArray.push(doc.data());
+  });
+  return dataArray
+
+}

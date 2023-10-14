@@ -8,7 +8,6 @@ import CheckOutPage from './pages/checkOutPage/checkOutPage.component';
 import Header from './components/header/header';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, createUserProfileDocument} from './firebase/firebase.utils';
-import { getDoc} from "firebase/firestore";
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
@@ -22,8 +21,7 @@ class App extends React.Component {
   componentDidMount(){
     this.unSubscribeFromAuth = onAuthStateChanged(auth, async (userAuth)=>{
       if(userAuth){
-        const refDoc = await createUserProfileDocument(userAuth);
-        const snapDoc = await getDoc(refDoc);
+        const snapDoc = await createUserProfileDocument(userAuth);
         this.props.setCurrentUser({
           id: snapDoc.id,
           ...snapDoc.data()

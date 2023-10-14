@@ -1,4 +1,7 @@
-export const addItemInCartWithQuantity = (cartItems, ItemAddToCart) => {
+import { CartItem } from "./cart.types"
+import { CategoryItem } from "../shop/shop-types"
+
+export const addItemInCartWithQuantity = (cartItems: CartItem[], ItemAddToCart: CategoryItem): CartItem[] => {
     const existingItem = cartItems.find((cartItem) => 
         cartItem.id === ItemAddToCart.id
     )
@@ -14,16 +17,16 @@ export const addItemInCartWithQuantity = (cartItems, ItemAddToCart) => {
 }
 
 
-export const removeItemFromCart = (cartItems, ItemRemove) => {
+export const removeItemFromCart = (cartItems: CartItem[], ItemRemove: CartItem): CartItem[] => {
     return cartItems.filter((item)=> item !== ItemRemove)
 
 }
 
-export const reduceQuantity = (cartItems, ItemReduceQuantity) =>{
+export const reduceQuantityFromCart = (cartItems: CartItem[], ItemReduceQuantity: CartItem) : CartItem[] =>{
     const existingItem = cartItems.find((cartItem) => 
         cartItem.id === ItemReduceQuantity.id
     )
-    if(existingItem.quantity === 1){
+    if(existingItem && existingItem.quantity === 1){
         return cartItems.filter((item)=> item !== existingItem)
     }
     else{

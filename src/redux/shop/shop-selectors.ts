@@ -1,7 +1,8 @@
 import { createSelector} from "reselect";
+import { RootReducer } from "../store";
+import { CategoriesState } from "./shop-reducer";
 
-
-const selectShop = state => state.shop;
+const selectShop = (state: RootReducer): CategoriesState => state.shop;
 
 export const selectShopCollections = createSelector(
     selectShop,
@@ -14,7 +15,7 @@ export const selectShopIsLoading = createSelector(
 )
 
 
-export const selectCollection = locationParam => createSelector(
+export const selectCollection = (locationParam: string) => createSelector(
     selectShopCollections,
     (collections) => {
     const collection = collections.find((collection) => collection.routeName === locationParam)

@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { getFirestore,  doc, getDoc, setDoc, collection, writeBatch, query, getDocs} from "firebase/firestore";
+import { getAuth, GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
+import { getFirestore,  doc, getDoc, setDoc, collection, writeBatch, query, getDocs, QueryDocumentSnapshot} from "firebase/firestore";
+import { Category } from '../redux/shop/shop-types';
 
 // config the fireStore and intialize app
 const config = {
@@ -25,8 +26,18 @@ export const signInWithGoogle =() => signInWithPopup(auth, provider);
 
 
 // Store data in fireStore database
+type AdditionalData= {
+  displayName?: string;
+}
+
+export type UserData = {
+  displayName: string;
+  email: string;
+  createdAt:Date;
+}
+
 const db = getFirestore(app);
-export const createUserProfileDocument = async (userAuth, additionalData) => {
+export const createUserProfileDocument = async (userAuth: User, additionalData: AdditionalData): Promise<void | QueryDocumentSnapshot<UserData>> => {
   if (!userAuth){
     return;
   }
@@ -47,12 +58,16 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
       console.log('error creating user')
     }
   }
-  return docRef;
+  return docSnap as QueryDocumentSnapshot<UserData>;
 }
 
 // addCollectionstoDB
 
-export const addCollectionToDb = async (collectionName, objectToAdd) =>{
+type ObjectToAdd = {
+  title: string;
+}
+
+export const addCollectionToDb = async <T extends ObjectToAdd>(collectionName: string, objectToAdd: T[]) : Promise<void> =>{
   const collectionRef = collection(db, collectionName);
   const batch = writeBatch(db)
   objectToAdd.forEach((obj) => {
@@ -67,14 +82,14 @@ export const addCollectionToDb = async (collectionName, objectToAdd) =>{
 
   // getCategoriesDB
 
-export const getCategoriesDB = async () =>{
+export const getCategoriesDB = async () : Promise<Category[]> =>{
   const collectionRef = collection(db, 'categories')
   const q = query(collectionRef);
   const querySnapshot = await getDocs(q);
-  const dataArray = [];
+  const dataArray: Category[] = [];
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
-    dataArray.push(doc.data());
+    dataArray.push(doc.data() as Category);
   });
   return dataArray
 
